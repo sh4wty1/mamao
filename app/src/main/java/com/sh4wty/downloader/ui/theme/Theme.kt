@@ -12,7 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
-private val Seed = Color(0xFF5B5BD6)
+// Mamão brand orange (Claude-style coral). Used on Android < 12 where dynamic color is unavailable.
+private val Seed = Color(0xFFD97757)
 
 private val LightColors = lightColorScheme(primary = Seed)
 private val DarkColors = darkColorScheme(primary = Seed)

@@ -16,7 +16,7 @@ import java.io.File
  */
 object StorageHelper {
 
-    private const val SUBDIR = "Downloader"
+    private const val SUBDIR = "Mamao"
 
     /** App-private scratch directory yt-dlp downloads into before we publish it. */
     fun scratchDir(context: Context, taskId: String): File {

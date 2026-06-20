@@ -4,10 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A personal Android-only downloader built on **yt-dlp**. Its reason to exist is the **Android
-share-sheet flow**: share a link from TikTok/YouTube/Instagram/etc. into the app and pick
-Video or Audio with one tap. There is also a normal main screen (paste a link, choose
+**Mamão** — a personal Android-only downloader built on **yt-dlp**. Its reason to exist is the
+**Android share-sheet flow**: share a link from TikTok/YouTube/Instagram/etc. into the app and
+pick Video or Audio with one tap. There is also a normal main screen (paste a link, choose
 Video/Audio). No iOS, no Play Store target. Bias toward simplicity over features.
+
+The brand is "Mamão" (papaya), Claude-style orange `#D97757`. The package id and internal class
+names are still `com.sh4wty.downloader` — only the user-facing label/icon/slogan are branded.
 
 ## Build & run
 
@@ -18,12 +21,23 @@ gradle wrapper
 
 ./gradlew assembleDebug          # build the debug APK
 ./gradlew installDebug           # build + install on a connected device
+./gradlew assembleRelease        # build the signed release APK (needs keystore.properties)
 ./gradlew lintDebug              # Android lint
 ```
 
 There are no unit tests yet. **The library only ships native libs for `arm64-v8a`** (see
 `abiFilters` in `app/build.gradle.kts`), so it will not run on an x86 emulator — test on a real
 arm64 device.
+
+## Release signing
+
+`buildTypes.release` is signed from a **`keystore.properties`** at the repo root (gitignored, so
+no secret ever reaches the public repo). It declares `storeFile`, `storePassword`, `keyAlias`,
+`keyPassword`; the `.jks` it points to is also gitignored. `app/build.gradle.kts` loads the file
+if present and only wires the signing config when it exists — so `assembleDebug` still works on a
+fresh clone without it. **The keystore + passwords must be backed up**: lose them and you can no
+longer ship updates that overwrite an installed copy. To regenerate from scratch:
+`keytool -genkeypair -keystore release.jks -alias mamao -keyalg RSA -keysize 2048 -validity 10000`.
 
 ## yt-dlp engine — the one non-obvious thing
 
@@ -60,8 +74,8 @@ Modern Android Development: single-activity Compose, thin layers, Kotlin only. P
   - `DownloadManager` (object) is the single source of truth: a `StateFlow<List<DownloadTask>>`
     the UI collects. The service mutates it; the UI only reads it.
 - **Storage is scoped.** `StorageHelper` downloads into `getExternalFilesDir` then publishes the
-  result into `Download/Downloader` via **MediaStore**. This is why there is **no**
-  `WRITE_EXTERNAL_STORAGE` permission — don't add one.
+  result into `Download/Mamao` via **MediaStore** (`StorageHelper.SUBDIR`). This is why there is
+  **no** `WRITE_EXTERNAL_STORAGE` permission — don't add one.
 - **State flows one way:** Service → `DownloadManager` StateFlow → Compose. Don't let the UI
   start downloads directly or hold download state; go through `DownloadService.start`.
 

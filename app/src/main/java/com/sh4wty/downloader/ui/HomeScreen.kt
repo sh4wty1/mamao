@@ -103,12 +103,18 @@ fun HomeScreen(
                 .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
+            Text(
+                text = stringResource(R.string.slogan),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 16.dp),
+            )
             OutlinedTextField(
                 value = url,
                 onValueChange = { url = it },
                 label = { Text(stringResource(R.string.paste_link)) },
                 singleLine = true,
-                modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
             )
             ChooserButtons(
                 enabled = url.isNotBlank(),

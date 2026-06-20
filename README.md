@@ -1,32 +1,42 @@
-# Downloader
+<div align="center">
+
+# 🥭 Mamão
+
+### Baixar vídeo das redes nunca foi tão *mamão com açúcar*.
 
 App Android pessoal e minimalista para baixar vídeo/áudio de YouTube, TikTok, Instagram e
-mais de 1000 sites — motor de download = [yt-dlp](https://github.com/yt-dlp/yt-dlp), rodando
-100% no aparelho (sem servidor).
+mais de 1000 sites — motor [yt-dlp](https://github.com/yt-dlp/yt-dlp), rodando 100% no aparelho
+(sem servidor).
+
+</div>
+
+---
 
 A razão de existir do app é o **botão Compartilhar do Android**: em qualquer app, toque em
-`Compartilhar → Downloader` e escolha **Vídeo** ou **Áudio** com um toque.
+`Compartilhar → Mamão` e escolha **Vídeo** ou **Áudio** com um toque.
 
-## Como rodar
+## Como rodar / instalar
 
-1. Abra a pasta no **Android Studio** (ele gera o Gradle wrapper automaticamente).
-   Ou, via linha de comando, com um Gradle ≥ 8.11 instalado:
-   ```bash
-   gradle wrapper
-   ./gradlew installDebug   # instala no aparelho conectado
-   ```
-2. **Use um aparelho arm64 real.** O app compila só para `arm64-v8a` (config pessoal, APK
-   menor), então não roda em emulador x86.
+- **Usuário:** baixe o APK na aba [Releases](../../releases) e instale (permita "fontes
+  desconhecidas"). Use um aparelho **arm64** real (não roda em emulador x86).
+- **Build do código:**
+  ```bash
+  # Android Studio gera o wrapper sozinho; via CLI use o ./gradlew já versionado.
+  ./gradlew assembleDebug     # APK de teste
+  ./gradlew assembleRelease   # APK assinado (precisa de keystore.properties — veja abaixo)
+  ```
 
 ## Funcionalidades
 
-- Colar link na tela principal → Vídeo / Áudio.
-- Receber link via Share → mini-seletor Vídeo / Áudio.
-- Áudio extraído em MP3, vídeo mesclado em MP4 (via ffmpeg embutido).
-- Download em foreground service com notificação de progresso.
-- Arquivos salvos em `Download/Downloader` (via MediaStore, sem permissão de armazenamento).
-- Botão **atualizar yt-dlp** (canal nightly) na barra superior — conserta quebras de sites sem
-  precisar atualizar o app.
+- 📥 Colar link → **Vídeo** ou **Áudio** (MP3).
+- 🔗 Receber link via **Compartilhar** → mini-seletor Vídeo / Áudio.
+- 🔄 Botão para **atualizar o yt-dlp** (canal nightly) quando algum site quebrar.
+- 💾 Arquivos salvos em `Download/Mamao` (via MediaStore, sem permissão de armazenamento).
+
+## Build de release (assinado)
+
+A assinatura usa um `keystore.properties` (ignorado pelo git) apontando para um `.jks` local —
+nenhuma senha vai para o repositório. Veja [CLAUDE.md](CLAUDE.md) para o passo a passo.
 
 ## Limitações conhecidas
 
@@ -36,4 +46,4 @@ A razão de existir do app é o **botão Compartilhar do Android**: em qualquer 
 ## Stack
 
 Kotlin · Jetpack Compose (Material 3) · single-activity · `youtubedl-android`.
-Detalhes de arquitetura para contribuir: ver [CLAUDE.md](CLAUDE.md).
+Detalhes de arquitetura: [CLAUDE.md](CLAUDE.md).

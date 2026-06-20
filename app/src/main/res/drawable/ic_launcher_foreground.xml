@@ -3,8 +3,20 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Download arrow, centered within the adaptive-icon safe zone. -->
+    <!-- Papaya half: cream flesh, orange cavity, dark seed cluster. Sits in the icon safe zone. -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M39,72h30v6H39zM72,48h-9V33H45v15h-9l18,18z" />
+        android:fillColor="#FFF3E6"
+        android:pathData="M32,54 a22,30 0 1,0 44,0 a22,30 0 1,0 -44,0 Z" />
+    <path
+        android:fillColor="#E8915C"
+        android:pathData="M42,54 a12,19 0 1,0 24,0 a12,19 0 1,0 -24,0 Z" />
+    <path
+        android:fillColor="#3B2417"
+        android:pathData="M51,42 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
+                          M45,50 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
+                          M57,50 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
+                          M51,52 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
+                          M46,60 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
+                          M56,60 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
+                          M51,68 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
 </vector>
