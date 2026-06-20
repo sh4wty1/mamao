@@ -3,20 +3,22 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Papaya half: cream flesh, orange cavity, dark seed cluster. Sits in the icon safe zone. -->
+    <!-- Papaya half on the orange background: cream rind, soft-orange flesh, dark seed cluster.
+         Layered so it reads as a papaya even at small launcher sizes. -->
     <path
-        android:fillColor="#FFF3E6"
-        android:pathData="M32,54 a22,30 0 1,0 44,0 a22,30 0 1,0 -44,0 Z" />
+        android:fillColor="#FFF1E0"
+        android:pathData="M32,54 a22,32 0 1,0 44,0 a22,32 0 1,0 -44,0 Z" />
     <path
-        android:fillColor="#E8915C"
-        android:pathData="M42,54 a12,19 0 1,0 24,0 a12,19 0 1,0 -24,0 Z" />
+        android:fillColor="#F4A07A"
+        android:pathData="M38,54 a16,26 0 1,0 32,0 a16,26 0 1,0 -32,0 Z" />
     <path
         android:fillColor="#3B2417"
-        android:pathData="M51,42 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
-                          M45,50 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
-                          M57,50 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
-                          M51,52 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
-                          M46,60 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
-                          M56,60 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z
-                          M51,68 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+        android:pathData="M50,40 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M43,49 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M58,49 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M50,52 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M44,61 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M57,61 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M50,64 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z
+                          M50,72 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0 Z" />
 </vector>

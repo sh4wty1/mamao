@@ -21,8 +21,8 @@ android {
         applicationId = "com.sh4wty.downloader"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "0.2.0"
+        versionCode = 3
+        versionName = "0.2.1"
 
         // Personal app: build only for the target device (modern phones are arm64-v8a).
         // Each extra ABI bundles a full Python + yt-dlp copy, so we keep just one.
