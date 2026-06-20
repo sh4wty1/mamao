@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compose draws its own Material 3 colors; the platform theme only sets the window. -->
+    <style name="Theme.Downloader" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- Used by ShareReceiverActivity so the quick chooser floats over the source app. -->
+    <style name="Theme.Downloader.Transparent" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

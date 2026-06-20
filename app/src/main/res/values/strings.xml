@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Downloader</string>
+    <string name="paste_link">Cole o link aqui</string>
+    <string name="video">Vídeo</string>
+    <string name="audio">Áudio</string>
+    <string name="download">Baixar</string>
+    <string name="done">Concluído</string>
+    <string name="download_failed">Falha no download</string>
+    <string name="download_started">Download iniciado</string>
+    <string name="downloading_video">Baixando vídeo…</string>
+    <string name="downloading_audio">Baixando áudio…</string>
+    <string name="starting">Iniciando…</string>
+    <string name="channel_downloads">Downloads</string>
+    <string name="no_link_found">Nenhum link encontrado</string>
+    <string name="update_engine">Atualizar yt-dlp</string>
+    <string name="engine_updated">yt-dlp atualizado</string>
+    <string name="engine_up_to_date">yt-dlp já está atualizado</string>
+    <string name="engine_update_failed">Falha ao atualizar yt-dlp</string>
+</resources>
