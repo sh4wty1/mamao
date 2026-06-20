@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.sh4wty.downloader.R
@@ -58,8 +59,10 @@ class DownloadService : Service() {
                 DownloadManager.markCompleted(taskId, result.title, result.outputUri)
                 showDone(result.title ?: typeLabel(type), success = true)
             }.onFailure { e ->
-                DownloadManager.markFailed(taskId, e.message ?: getString(R.string.download_failed))
-                showDone(e.message ?: getString(R.string.download_failed), success = false)
+                Log.w(TAG, "download failed for $url", e) // keep the raw yt-dlp output for debugging
+                val friendly = getString(DownloadErrors.messageRes(e.message))
+                DownloadManager.markFailed(taskId, friendly)
+                showDone(friendly, success = false)
             }
             if (active.decrementAndGet() == 0) stopIfIdle()
         }
@@ -122,6 +125,7 @@ class DownloadService : Service() {
     }
 
     companion object {
+        private const val TAG = "DownloadService"
         private const val EXTRA_URL = "extra_url"
         private const val EXTRA_TYPE = "extra_type"
         private const val CHANNEL_ID = "downloads"

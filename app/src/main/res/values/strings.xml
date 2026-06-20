@@ -8,6 +8,10 @@
     <string name="download">Baixar</string>
     <string name="done">Concluído</string>
     <string name="download_failed">Falha no download</string>
+    <string name="error_outdated">Não rolou 😕 O yt-dlp pode estar desatualizado. Toque no 🔄 lá em cima pra atualizar e tente de novo.</string>
+    <string name="error_unsupported">Não consegui baixar esse link. Esse site/post pode não ser suportado ou ser privado.</string>
+    <string name="error_network">Sem conexão ou o servidor não respondeu. Confira a internet e tente de novo.</string>
+    <string name="error_generic">Não consegui baixar esse link. Tente atualizar o yt-dlp no 🔄 ou confira a URL.</string>
     <string name="download_started">Download iniciado</string>
     <string name="downloading_video">Baixando vídeo…</string>
     <string name="downloading_audio">Baixando áudio…</string>
